@@ -19,7 +19,7 @@ int main() {
   
   int cake_batch = 50;
   int desire = 0;
-  float raw_coefficient = 0;
+  int raw_coefficient = 0;
   int coefficient = 0;
 
   cout << "Enter the number of cupcakes your heart desires: ";
@@ -27,7 +27,29 @@ int main() {
 
   raw_coefficient = desire / cake_batch;
   
+  if (raw_coefficient <= 0)
+    return 0;
+  else
+    if (inventory_eggs / (recipe_eggs * raw_coefficient) <= 0  )
+      return 0;
+    else
+      if (inventory_flour / recipe_flour * raw_coefficient <= 0)
+        return 0;
+      else
+        if (inventory_milk / recipe_milk * raw_coefficient <= 0)
+          return 0;
+        else
+          if (inventory_sugar / recipe_sugar * raw_coefficient <= 0)
+            return 0;
+          else if (inventory_salt / recipe_salt * raw_coefficient <= 0)
+            return 0;
+          else
+            cout << "We're making you " << desire;
+
+
+    
   
+
 
 
   

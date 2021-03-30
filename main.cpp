@@ -23,12 +23,14 @@ int main() {
 
   overflow = purchase_order % cake_batch;
 
+  cout << overflow << endl;
+
   if (overflow > 0)
     workload = workload + 50;
   else
     workload = workload;
   
-cout << workload 
+  cout << workload << endl;
 
 
 

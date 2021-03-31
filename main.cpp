@@ -5,9 +5,9 @@ using namespace std;
 
 int main() {
 
-  int inventory_eggs = 4;      int recipe_eggs = 25;     int cake_batch = 50;
-  int inventory_flour = 220;   int recipe_flour = 10;    int purchase_order = 0;
-  int inventory_milk = 270;    int recipe_milk = 5;      int overflow = 0;
+  int inventory_eggs = 48;      int recipe_eggs = 25;    double cake_batch = 50.0;
+  int inventory_flour = 220;   int recipe_flour = 10;    double purchase_order = 1.0;
+  int inventory_milk = 270;    int recipe_milk = 5;      double upsell = 0;
   int inventory_sugar = 70;    int recipe_sugar = 1;     double workload = 0;
   int inventory_salt = 100;    int recipe_salt = 10;     double raw_coefficient = 0;
 
@@ -16,23 +16,15 @@ int main() {
   cout << "Enter the number of cupcakes you want: ";
   cin >> purchase_order;
 
-  if (purchase_order > 50)
-    workload = purchase_order / cake_batch;
-  else
-    workload = purchase_order;
-
-  overflow = purchase_order % cake_batch;
-
-  cout << overflow << endl;
-
-  if (overflow > 0)
-    workload = workload + 50;
-  else
-    workload = workload;
   
-  cout << workload << endl;
+  workload = purchase_order / cake_batch;
+  
+
+  
+  cout << ceil(workload);
 
 
+}
 
 
 
@@ -76,4 +68,3 @@ int main() {
           else
             cout << accept_order;
 */
-}

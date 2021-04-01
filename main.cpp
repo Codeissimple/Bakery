@@ -19,21 +19,23 @@ int main() {
   cout << "Enter the number of cupcakes you want: ";
   cin >> purchase_order;
 
+
   string accept_order = "We have everything we need to make you " +
-          to_string(round(purchase_order)) + " cupcakes! \nThe remainder of our inventory cosists of: "  +
+          to_string(purchase_order) + " cupcakes! \nThe remainder of our inventory cosists of: "  +
           "\nEggs: " + to_string(eggs_remainer) + "\nFlour: " +
           to_string(flour_remainer) + "\nMilk: "+ to_string(milk_remainer) + "\nSugar: " +
           to_string(sugar_remainer) + "\nSalt: "+ to_string(salt_remainer);
+  string decline_order = "There is not enough inventory to bake " + to_string(desire) + " cupcakes. Sorry!";
 
   
   workload = purchase_order / cake_batch;
   
 
-  eggs_remainer = inventory_eggs - (recipe_eggs * raw_coefficient);
-  flour_remainer = inventory_flour - (recipe_flour * raw_coefficient);
-  milk_remainer = inventory_milk - (recipe_milk * raw_coefficient);
-  sugar_remainer = inventory_sugar - (recipe_sugar * raw_coefficient);
-  salt_remainer = inventory_salt -(recipe_salt * raw_coefficient);
+  eggs_remainer = inventory_eggs - (recipe_eggs * workload);
+  flour_remainer = inventory_flour - (recipe_flour * workload);
+  milk_remainer = inventory_milk - (recipe_milk * workload);
+  sugar_remainer = inventory_sugar - (recipe_sugar * workload);
+  salt_remainer = inventory_salt -(recipe_salt * workload);
 
 
 
